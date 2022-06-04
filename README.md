@@ -1,40 +1,22 @@
-### Getting started
+### Contract for the prezents
 
-Create a file `private.json` ( refer `private.example.json` ) inside `backend` folder and add your private key.
+![](https://i.imgur.com/waxVImv.png)
 
-##### Install deps
+[Website](https://www.prezents.xyz)
 
-`cd zk-block/backend`
-`yarn install`
+### How to Run
 
-##### Compile contracts
+```
+ git clone <repo>
+```
 
-`yarn compile`
+#### Smart Contract
 
-##### Compile cicuits
+```
+cd backend
+yarn
+yarn compile
+yarn deploy:quizapp --network testnet
+```
 
-- Using groth16
-
-`yarn compile:circuits`
-
-Please do not use this to compile circuits for production. Proper ceremony is required.
-
-- Using Plonk
-
-`yarn compile:pks`
-
-Note: Plonks does not require phase 2 trusted ceremony per circuit, it's enough with the powers of tau ceremony which is universal.
-
-This repo uses [Hermez Cryptographic Setup](https://blog.hermez.io/hermez-cryptographic-setup/) with power of 14, which is more than enough for this repo purpose.
-
-##### Run tests
-
-`yarn test`
-
-##### Deploy Contract
-
-Select network - `chain.ts` contains network configuration. Network selected for deployment is mentioned in `hardhat.config.ts` file. Default is "ONE" ( HARMONY Network).
-
-Run below command to deploy
-
-`yarn deploy:agecheck --network testnet`
+Note: you will need to provide a private key deployment refer `backend/private.example.json`
